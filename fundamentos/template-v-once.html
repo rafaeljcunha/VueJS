@@ -1,0 +1,23 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+  <p v-once>{{ titulo }}</p>
+  <p>{{ saudacao() }}</p>
+</div>
+
+<script>
+  new Vue({
+    el: "#app",
+    data: {
+      titulo: "Usando VueJS!",
+    },
+    methods: {
+      saudacao: function () {
+        // V-ONCE permite atualizar apenas uma vez, o elemento.
+        // Evitar renderizações desnecessárias
+        this.titulo = "Bom dia!!!";
+        return this.titulo;
+      },
+    },
+  });
+</script>

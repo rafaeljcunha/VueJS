@@ -1,0 +1,25 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+  <p>{{x}} e {{y}}</p>
+  <p v-on:mousemove="atualizarXY">
+    Passe o Mouse <strong v-on:mousemove.stop="">Parar o mouse</strong>
+  </p>
+  <a v-on:click.prevent="" href="https://www.google.com.br/">Google</a>
+</div>
+
+<script>
+  new Vue({
+    el: "#app",
+    data: {
+      x: 0,
+      y: 0,
+    },
+    methods: {
+      atualizarXY(event) {
+        this.x = event.clientX;
+        this.y = event.clientY;
+      },
+    },
+  });
+</script>

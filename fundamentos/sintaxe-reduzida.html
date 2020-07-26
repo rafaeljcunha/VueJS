@@ -1,0 +1,23 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+  <p>Contador: {{ contador }}</p>
+  <button @click="aumentar">Somar 1</button>
+  <br />
+  <br />
+  <input type="text" :value="contador" />
+</div>
+
+<script>
+  new Vue({
+    el: "#app",
+    data: {
+      contador: 0,
+    },
+    methods: {
+      aumentar() {
+        this.contador++;
+      },
+    },
+  });
+</script>

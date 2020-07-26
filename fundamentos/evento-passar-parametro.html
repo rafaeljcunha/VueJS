@@ -1,0 +1,25 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+  <p>{{result}}</p>
+  <span
+    v-on:mousemove="somar(5, 4, $event)"
+    v-on:mouseleave="somar(0, 0, $event)"
+    >Passe o Mouse</span
+  >
+</div>
+
+<script>
+  new Vue({
+    el: "#app",
+    data: {
+      result: 0,
+    },
+    methods: {
+      somar(params1, params2, event) {
+        console.log(event);
+        this.result = params1 + params2;
+      },
+    },
+  });
+</script>
